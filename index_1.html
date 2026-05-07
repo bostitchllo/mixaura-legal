@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MixFlow — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0A0A0F;
+      --surface: #141420;
+      --surface-elevated: #1C1C2E;
+      --border: rgba(255,255,255,0.08);
+      --accent: #C9A84C;
+      --accent-muted: rgba(201,168,76,0.12);
+      --accent-border: rgba(201,168,76,0.25);
+      --text-primary: #FFFFFF;
+      --text-secondary: rgba(255,255,255,0.55);
+      --text-muted: rgba(255,255,255,0.3);
+      --font-sans: 'DM Sans', sans-serif;
+      --font-mono: 'DM Mono', monospace;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      min-height: 100vh;
+    }
+
+    /* Language toggle */
+    .lang-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,10,15,0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 0.5px solid var(--border);
+      padding: 12px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lang-bar-brand {
+      font-family: var(--font-mono);
+      font-size: 13px;
+      letter-spacing: 3px;
+      color: var(--accent);
+      text-transform: uppercase;
+    }
+
+    .lang-toggle {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      padding: 3px;
+    }
+
+    .lang-btn {
+      padding: 6px 14px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-family: var(--font-sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .lang-btn.active {
+      background: var(--accent-muted);
+      color: var(--accent);
+      border: 0.5px solid var(--accent-border);
+    }
+
+    .lang-btn:hover:not(.active) {
+      color: var(--text-secondary);
+    }
+
+    /* Hero */
+    .hero {
+      padding: 80px 24px 56px;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+    .hero-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+      color: var(--text-primary);
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .hero-meta-dot {
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--text-muted);
+    }
+
+    /* Content */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 24px 120px;
+    }
+
+    /* Summary card */
+    .summary-card {
+      background: var(--accent-muted);
+      border: 0.5px solid var(--accent-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 48px;
+    }
+
+    .summary-card-title {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .summary-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .summary-list li {
+      font-size: 14px;
+      color: rgba(201,168,76,0.8);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.5;
+    }
+
+    .summary-list li::before {
+      content: '✓';
+      color: var(--accent);
+      font-weight: 500;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 48px;
+    }
+
+    .section-number {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: 20px;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+      color: var(--text-primary);
+      margin-bottom: 20px;
+      padding-bottom: 16px;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .section-body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.75;
+    }
+
+    /* Sub-sections */
+    .subsection {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 22px;
+    }
+
+    .subsection-title {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .subsection ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .subsection ul li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.55;
+    }
+
+    .subsection ul li::before {
+      content: '·';
+      color: var(--accent);
+      font-size: 18px;
+      line-height: 1.2;
+      flex-shrink: 0;
+    }
+
+    /* Highlight box */
+    .highlight {
+      background: var(--surface-elevated);
+      border: 0.5px solid var(--border);
+      border-left: 2px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+    }
+
+    .highlight p {
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    /* Contact card */
+    .contact-card {
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .contact-label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    .contact-value {
+      font-size: 14px;
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+
+    .contact-value:hover {
+      opacity: 0.8;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 0.5px solid var(--border);
+      padding: 32px 24px;
+      text-align: center;
+    }
+
+    .footer-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: gap;
+      gap: 12px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 2px;
+      color: var(--accent);
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Language sections */
+    .lang-section { display: none; }
+    .lang-section.active { display: block; }
+
+    /* Divider */
+    .divider {
+      height: 0.5px;
+      background: var(--border);
+      margin: 8px 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero { padding: 56px 20px 40px; }
+      .content { padding: 0 20px 80px; }
+      .hero-title { font-size: 28px; }
+      .footer-inner { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sticky language bar -->
+  <div class="lang-bar">
+    <span class="lang-bar-brand">MIXFLOW</span>
+    <div class="lang-toggle">
+      <button class="lang-btn active" onclick="setLang('en')" id="btn-en">🇺🇸 English</button>
+      <button class="lang-btn" onclick="setLang('es')" id="btn-es">🇪🇸 Español</button>
+    </div>
+  </div>
+
+  <!-- ENGLISH VERSION -->
+  <div class="lang-section active" id="lang-en">
+
+    <div class="hero">
+      <p class="hero-eyebrow">Legal · Privacy</p>
+      <h1 class="hero-title">Privacy <span>Policy</span></h1>
+      <div class="hero-meta">
+        <span>MixFlow</span>
+        <div class="hero-meta-dot"></div>
+        <span>Last updated: April 30, 2026</span>
+        <div class="hero-meta-dot"></div>
+        <span>Version 1.0</span>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <!-- Summary card -->
+      <div class="summary-card">
+        <p class="summary-card-title">The short version</p>
+        <ul class="summary-list">
+          <li>We don't collect your name, email, or personal information</li>
+          <li>Audio files are analyzed and immediately deleted from our servers</li>
+          <li>All your data stays on your device</li>
+          <li>We never sell your data or share it with advertisers</li>
+          <li>Payments are handled entirely by Apple — we never see your card</li>
+        </ul>
+      </div>
+
+      <!-- Section 1 -->
+      <div class="section">
+        <p class="section-number">Section 01</p>
+        <h2 class="section-title">Information We Collect</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Information you provide</p>
+            <ul>
+              <li>Audio files you import for analysis</li>
+              <li>Set names you create when saving playlists</li>
+              <li>Language preference (English or Spanish)</li>
+              <li>App settings and preferences</li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <p class="subsection-title">Generated automatically</p>
+            <ul>
+              <li>BPM and musical key results derived from your audio files</li>
+              <li>Playlist configurations and set orders</li>
+              <li>Transition time and style preferences</li>
+              <li>BPM Arc settings</li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <p class="subsection-title">What we do NOT collect</p>
+            <ul>
+              <li>Name, email address, or personal identification</li>
+              <li>User accounts or profiles</li>
+              <li>Location data</li>
+              <li>Device identifiers for advertising</li>
+              <li>Any data shared with third parties for marketing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 2 -->
+      <div class="section">
+        <p class="section-number">Section 02</p>
+        <h2 class="section-title">How We Use Your Information</h2>
+        <div class="section-body">
+          <p>All data processing in MixFlow happens locally on your device. Audio files are sent to our analysis server solely to detect BPM and musical key — and are not stored after analysis.</p>
+          <div class="highlight">
+            <p>Analysis results are returned to your device and stored locally. No audio content, playlist data, or personal information is retained on our servers.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 3 -->
+      <div class="section">
+        <p class="section-number">Section 03</p>
+        <h2 class="section-title">Audio File Processing</h2>
+        <div class="section-body">
+          <p>When you import an audio file for analysis, it is temporarily transmitted to our secure server, BPM and musical key are extracted, and the file is immediately deleted — typically within seconds.</p>
+          <div class="subsection">
+            <p class="subsection-title">Our commitments</p>
+            <ul>
+              <li>We do not store your audio files after analysis</li>
+              <li>We do not copy, distribute, or use your audio for any other purpose</li>
+              <li>We do not claim any rights to your audio files</li>
+              <li>All transmission is encrypted via HTTPS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 4 -->
+      <div class="section">
+        <p class="section-number">Section 04</p>
+        <h2 class="section-title">Local Data Storage</h2>
+        <div class="section-body">
+          <p>MixFlow stores the following data locally on your device using secure on-device storage:</p>
+          <div class="subsection">
+            <p class="subsection-title">Stored on your device</p>
+            <ul>
+              <li>Analyzed track metadata (title, BPM, key)</li>
+              <li>Saved set configurations</li>
+              <li>App preferences and settings</li>
+              <li>Language selection</li>
+            </ul>
+          </div>
+          <p>This data never leaves your device except during audio analysis (Section 3) and set sharing (Section 6).</p>
+        </div>
+      </div>
+
+      <!-- Section 5 -->
+      <div class="section">
+        <p class="section-number">Section 05</p>
+        <h2 class="section-title">Subscriptions & Payments</h2>
+        <div class="section-body">
+          <p>MixFlow Pro subscriptions are processed entirely by Apple through the App Store. We do not collect, store, or have access to any payment information, credit card details, or billing data.</p>
+          <div class="highlight">
+            <p>All subscription management is handled through your Apple ID and App Store settings. Contact Apple Support for billing inquiries.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 6 -->
+      <div class="section">
+        <p class="section-number">Section 06</p>
+        <h2 class="section-title">Set Sharing</h2>
+        <div class="section-body">
+          <p>When you share a set using MixFlow, the exported .mixflow file contains only track metadata — title, artist, BPM, key, order, and transition settings. Audio files are never included.</p>
+          <div class="subsection">
+            <p class="subsection-title">How sharing works</p>
+            <ul>
+              <li>Sets are shared directly between users via iOS share sheet</li>
+              <li>MixFlow does not operate a server that stores shared sets</li>
+              <li>We have no visibility into what sets you share or with whom</li>
+              <li>Recipients need MixFlow installed to open .mixflow files</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 7 -->
+      <div class="section">
+        <p class="section-number">Section 07</p>
+        <h2 class="section-title">Third-Party Services</h2>
+        <div class="section-body">
+          <p>MixFlow currently integrates with Apple App Store for subscription processing, and our analysis server for BPM and key detection (audio deleted immediately after processing).</p>
+          <div class="highlight">
+            <p>Future integrations (Tidal, Beatport) will be governed by their respective privacy policies. We will update this Privacy Policy before any new integration is activated.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 8 -->
+      <div class="section">
+        <p class="section-number">Section 08</p>
+        <h2 class="section-title">Children's Privacy</h2>
+        <div class="section-body">
+          <p>MixFlow is rated 4+ on the App Store and does not knowingly collect any personal information from children under 13. Since MixFlow does not collect personal information from any user, this policy applies equally to all age groups.</p>
+        </div>
+      </div>
+
+      <!-- Section 9 -->
+      <div class="section">
+        <p class="section-number">Section 09</p>
+        <h2 class="section-title">Data Security</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Security measures</p>
+            <ul>
+              <li>All server communication uses HTTPS encryption</li>
+              <li>Audio files are transmitted over encrypted connections</li>
+              <li>No personal data is stored on our servers</li>
+              <li>Local data is protected by iOS device encryption</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 10 -->
+      <div class="section">
+        <p class="section-number">Section 10</p>
+        <h2 class="section-title">Data Retention</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Retention periods</p>
+            <ul>
+              <li>Audio files — deleted from servers immediately after analysis</li>
+              <li>Analysis results — stored locally until you clear app data</li>
+              <li>Saved sets — stored locally until you delete them</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 11 -->
+      <div class="section">
+        <p class="section-number">Section 11</p>
+        <h2 class="section-title">Your Rights</h2>
+        <div class="section-body">
+          <p>Since MixFlow does not collect personal data, there is no personal data to access, correct, or delete on our servers.</p>
+          <div class="highlight">
+            <p>To delete all locally stored data, delete the MixFlow app from your device. This removes all track metadata, saved sets, and preferences.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section 12 -->
+      <div class="section">
+        <p class="section-number">Section 12</p>
+        <h2 class="section-title">Changes to This Policy</h2>
+        <div class="section-body">
+          <p>We may update this Privacy Policy from time to time. We will notify you of significant changes by updating the "Last updated" date at the top of this page. Continued use of MixFlow after changes constitutes acceptance of the updated policy.</p>
+        </div>
+      </div>
+
+      <!-- Section 13 -->
+      <div class="section">
+        <p class="section-number">Section 13</p>
+        <h2 class="section-title">Contact Us</h2>
+        <div class="section-body">
+          <p>If you have questions about this Privacy Policy or MixFlow's data practices:</p>
+          <div class="contact-card">
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <a href="mailto:privacy@mixflow.app" class="contact-value">privacy@mixflow.app</a>
+            </div>
+            <div class="divider"></div>
+            <div class="contact-row">
+              <span class="contact-label">Web</span>
+              <a href="https://mixflow.app" class="contact-value">mixflow.app</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- SPANISH VERSION -->
+  <div class="lang-section" id="lang-es">
+
+    <div class="hero">
+      <p class="hero-eyebrow">Legal · Privacidad</p>
+      <h1 class="hero-title">Política de <span>Privacidad</span></h1>
+      <div class="hero-meta">
+        <span>MixFlow</span>
+        <div class="hero-meta-dot"></div>
+        <span>Última actualización: 30 de abril de 2026</span>
+        <div class="hero-meta-dot"></div>
+        <span>Versión 1.0</span>
+      </div>
+    </div>
+
+    <div class="content">
+
+      <div class="summary-card">
+        <p class="summary-card-title">La versión corta</p>
+        <ul class="summary-list">
+          <li>No recopilamos tu nombre, email ni información personal</li>
+          <li>Los archivos de audio se analizan y se eliminan inmediatamente de nuestros servidores</li>
+          <li>Todos tus datos permanecen en tu dispositivo</li>
+          <li>Nunca vendemos tus datos ni los compartimos con anunciantes</li>
+          <li>Los pagos son manejados íntegramente por Apple — nunca vemos tu tarjeta</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 01</p>
+        <h2 class="section-title">Información que Recopilamos</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Información que tú proporcionas</p>
+            <ul>
+              <li>Archivos de audio que importas para análisis</li>
+              <li>Nombres de sets al guardar playlists</li>
+              <li>Preferencia de idioma (inglés o español)</li>
+              <li>Configuraciones y preferencias de la app</li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <p class="subsection-title">Generada automáticamente</p>
+            <ul>
+              <li>Resultados de BPM y clave musical de tus archivos de audio</li>
+              <li>Configuraciones de playlist y orden de sets</li>
+              <li>Preferencias de tiempo y estilo de transición</li>
+              <li>Configuraciones de BPM Arc</li>
+            </ul>
+          </div>
+          <div class="subsection">
+            <p class="subsection-title">Lo que NO recopilamos</p>
+            <ul>
+              <li>Nombre, email ni identificación personal</li>
+              <li>Cuentas de usuario o perfiles</li>
+              <li>Datos de ubicación</li>
+              <li>Identificadores del dispositivo para publicidad</li>
+              <li>Datos compartidos con terceros para marketing</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 02</p>
+        <h2 class="section-title">Cómo Usamos Tu Información</h2>
+        <div class="section-body">
+          <p>Todo el procesamiento de datos en MixFlow ocurre localmente en tu dispositivo. Los archivos de audio se envían a nuestro servidor de análisis únicamente para detectar BPM y clave musical, y no se almacenan después del análisis.</p>
+          <div class="highlight">
+            <p>Los resultados del análisis se devuelven a tu dispositivo y se almacenan localmente. Ningún contenido de audio, datos de playlist ni información personal se retiene en nuestros servidores.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 03</p>
+        <h2 class="section-title">Procesamiento de Archivos de Audio</h2>
+        <div class="section-body">
+          <p>Cuando importas un archivo de audio para análisis, se transmite temporalmente a nuestro servidor seguro, se extraen el BPM y la clave musical, y el archivo se elimina inmediatamente — típicamente en segundos.</p>
+          <div class="subsection">
+            <p class="subsection-title">Nuestros compromisos</p>
+            <ul>
+              <li>No almacenamos tus archivos de audio después del análisis</li>
+              <li>No copiamos, distribuimos ni usamos tu audio para ningún otro propósito</li>
+              <li>No reclamamos ningún derecho sobre tus archivos de audio</li>
+              <li>Toda transmisión está cifrada mediante HTTPS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 04</p>
+        <h2 class="section-title">Almacenamiento Local de Datos</h2>
+        <div class="section-body">
+          <p>MixFlow almacena los siguientes datos localmente en tu dispositivo:</p>
+          <div class="subsection">
+            <p class="subsection-title">Almacenado en tu dispositivo</p>
+            <ul>
+              <li>Metadata de tracks analizados (título, BPM, clave)</li>
+              <li>Configuraciones de sets guardados</li>
+              <li>Preferencias y configuraciones de la app</li>
+              <li>Selección de idioma</li>
+            </ul>
+          </div>
+          <p>Estos datos nunca abandonan tu dispositivo excepto durante el análisis de audio (Sección 3) y al compartir sets (Sección 6).</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 05</p>
+        <h2 class="section-title">Suscripciones y Pagos</h2>
+        <div class="section-body">
+          <p>Las suscripciones a MixFlow Pro son procesadas íntegramente por Apple a través del App Store. No recopilamos, almacenamos ni tenemos acceso a ninguna información de pago, tarjeta de crédito ni datos de facturación.</p>
+          <div class="highlight">
+            <p>Toda la gestión de suscripciones se realiza a través de tu Apple ID y la configuración del App Store. Contacta al Soporte de Apple para consultas de facturación.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 06</p>
+        <h2 class="section-title">Compartir Sets</h2>
+        <div class="section-body">
+          <p>Cuando compartes un set con MixFlow, el archivo .mixflow exportado contiene únicamente metadata de tracks — título, artista, BPM, clave, orden y configuración de transiciones. Los archivos de audio nunca se incluyen.</p>
+          <div class="subsection">
+            <p class="subsection-title">Cómo funciona el sharing</p>
+            <ul>
+              <li>Los sets se comparten directamente entre usuarios vía iOS share sheet</li>
+              <li>MixFlow no opera un servidor que almacene sets compartidos</li>
+              <li>No tenemos visibilidad sobre qué sets compartes ni con quién</li>
+              <li>Los receptores necesitan MixFlow instalado para abrir archivos .mixflow</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 07</p>
+        <h2 class="section-title">Servicios de Terceros</h2>
+        <div class="section-body">
+          <p>MixFlow actualmente integra Apple App Store para el procesamiento de suscripciones, y nuestro servidor de análisis para detección de BPM y clave musical (audio eliminado inmediatamente después del procesamiento).</p>
+          <div class="highlight">
+            <p>Las integraciones futuras (Tidal, Beatport) estarán regidas por sus respectivas políticas de privacidad. Actualizaremos esta Política antes de activar cualquier nueva integración.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 08</p>
+        <h2 class="section-title">Privacidad de Menores</h2>
+        <div class="section-body">
+          <p>MixFlow tiene calificación 4+ en el App Store y no recopila conscientemente ninguna información personal de menores de 13 años. Dado que MixFlow no recopila información personal de ningún usuario, esta política aplica por igual a todos los grupos de edad.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 09</p>
+        <h2 class="section-title">Seguridad de Datos</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Medidas de seguridad</p>
+            <ul>
+              <li>Toda comunicación con el servidor usa cifrado HTTPS</li>
+              <li>Los archivos de audio se transmiten mediante conexiones cifradas</li>
+              <li>No se almacenan datos personales en nuestros servidores</li>
+              <li>Los datos locales están protegidos por el cifrado del dispositivo iOS</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 10</p>
+        <h2 class="section-title">Retención de Datos</h2>
+        <div class="section-body">
+          <div class="subsection">
+            <p class="subsection-title">Períodos de retención</p>
+            <ul>
+              <li>Archivos de audio — eliminados de servidores inmediatamente después del análisis</li>
+              <li>Resultados del análisis — almacenados localmente hasta que borres los datos</li>
+              <li>Sets guardados — almacenados localmente hasta que los elimines</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 11</p>
+        <h2 class="section-title">Tus Derechos</h2>
+        <div class="section-body">
+          <p>Dado que MixFlow no recopila datos personales, no hay datos personales que acceder, corregir ni eliminar en nuestros servidores.</p>
+          <div class="highlight">
+            <p>Para eliminar todos los datos almacenados, elimina la app MixFlow de tu dispositivo. Esto borra toda la metadata de tracks, sets guardados y preferencias.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 12</p>
+        <h2 class="section-title">Cambios a Esta Política</h2>
+        <div class="section-body">
+          <p>Podemos actualizar esta Política de Privacidad periódicamente. Te notificaremos de cambios significativos actualizando la fecha en la parte superior. El uso continuado de MixFlow después de los cambios constituye la aceptación de la política actualizada.</p>
+        </div>
+      </div>
+
+      <div class="section">
+        <p class="section-number">Sección 13</p>
+        <h2 class="section-title">Contacto</h2>
+        <div class="section-body">
+          <p>Si tienes preguntas sobre esta Política de Privacidad o las prácticas de datos de MixFlow:</p>
+          <div class="contact-card">
+            <div class="contact-row">
+              <span class="contact-label">Email</span>
+              <a href="mailto:privacy@mixflow.app" class="contact-value">privacy@mixflow.app</a>
+            </div>
+            <div class="divider"></div>
+            <div class="contact-row">
+              <span class="contact-label">Web</span>
+              <a href="https://mixflow.app" class="contact-value">mixflow.app</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-inner">
+      <span class="footer-brand">MIXFLOW</span>
+      <span class="footer-copy">© 2026 MixFlow. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <script>
+    function setLang(lang) {
+      document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+      document.getElementById('lang-es').classList.toggle('active', lang === 'es');
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+      document.documentElement.lang = lang;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+
+</body>
+</html>
