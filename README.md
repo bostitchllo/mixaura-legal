@@ -19,8 +19,6 @@ This repository hosts the public legal documents for **MixFlow**, the harmonic D
 
 ## Contact
 
-Privacy inquiries: privacy@mixflow.app
-
----
+Privacy inquiries: lloyd.diaz@me.com---
 
 © 2026 MixFlow. All rights reserved.
