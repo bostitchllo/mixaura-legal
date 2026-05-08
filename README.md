@@ -1,12 +1,12 @@
-# MixFlow — Legal
+# Mixaura — Legal
 
-This repository hosts the public legal documents for **MixFlow**, the harmonic DJ mixing app for iOS.
+This repository hosts the public legal documents for **Mixaura**, the harmonic DJ mixing app for iOS.
 
 ## Live Pages
 
 | Document | URL |
 |---|---|
-| Privacy Policy (EN/ES) | [View →](https://tunombredeusuario.github.io/mixflow-privacy) |
+| Privacy Policy (EN/ES) | [View →](https://bostitchllo.github.io/mixflow-legal) |
 
 ## Documents
 
@@ -15,10 +15,12 @@ This repository hosts the public legal documents for **MixFlow**, the harmonic D
 ## App Store Links
 
 - App Store: *(coming soon)*
-- Website: mixflow.app
+- Website: [mixaura.co](https://mixaura.co)
 
 ## Contact
 
-Privacy inquiries: lloyd.diaz@me.com---
+Privacy inquiries: privacy@mixaura.co
 
-© 2026 MixFlow. All rights reserved.
+---
+
+© 2026 Mixaura. All rights reserved.
